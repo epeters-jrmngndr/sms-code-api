@@ -39,3 +39,4 @@ terraform.rc
 
 # Custom ignores
 *~
+*.zip

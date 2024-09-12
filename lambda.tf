@@ -2,8 +2,8 @@ resource "aws_lambda_function" "lambda" {
   filename      = "lambda.zip"
   function_name = "sms-notification"
   role          = aws_iam_role.lambda_iam.arn
-  handler       = "index.handler"
-  runtime       = "nodejs20.x" # I upgrade this to nodejs20
+  handler       = "lambda.lambda_handler"
+  runtime       = "python3.12"
   timeout       = 30
 
   environment {
