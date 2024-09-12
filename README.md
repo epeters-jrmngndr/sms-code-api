@@ -29,3 +29,11 @@ You can then use Terraform to provision and deploy the project. You will need AW
 - **Error**: "Invalid phone number".
   This error can occur when a user tries to send an SMS with an invalid or non-existent phone number. Confirm that the phone number is valid.
 - **No SMS Received**: Either Disable the SMS Sandbox under SNS configuration, or add the desired phone number to the list of approved numbers.
+
+## Usage
+
+To help in understanding how the API is invoked, an example request is provided below. You will have to replace the template variables with appropriate values.
+
+```bash
+curl -X POST https://${API_GATEWAY_ID}.execute-api.us-west-2.amazonaws.com/prod/sms -H "Content-Type: application/json" -d '{"first_name": "${FIRST_NAME}", "last_name": "${LAST_NAME}", "code": ${CODE}, "phone_number": "${PHONE_NUMBER}"}
+```
